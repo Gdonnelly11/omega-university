@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Omega University 
+      University web page
+      Author: Garrison Donnelly
+      Date:  6/6/2021 
+
+      Filename: costcalculator.html
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Cost Calculator - Omega University</title>
+   <link rel="stylesheet" href="omegastyle.css" />
+</head>
+
+<body>
+   <div>
+     <header>
+	    <h1>
+		   <img src="images/omega.png" width="132" height="120" alt="Omega Symbol" title="" id="logo1" />
+		   Omega University
+		</h1>   
+     </header>
+	 
+	 <nav>
+	    <ul>
+		   <li><a href="index.html">Home</a></li>
+           <li><a href="contact.html">Contact Us</a></li>
+           <li><a href="about.html">About Us</a></li>
+           <li><a href="majors.html">Majors Offered</a></li>
+		   <li id="currentpage"><a href="#">Cost Calculator</a></li>
+		</ul>
+	 </nav>
+	 
+	 <main>
+	    <h1>
+		   <img src="images/calculators.png" width="1000" height="500" alt="Three Calculators" title="" id="calculators" />
+		   Welcome to Omega University! <br/> Your last stop for higher education!
+		</h1>
+		
+		<article id="costcalc">
+		   <div class="column left">
+		   </div>
+		   <div class="column middle">
+		      <h2>Degree Cost Calculator</h2>
+			  <div id="errorText"></div>
+			  <p>Paying for college can be a stressful experience for many prospective students. We've created the below calculator to make it easier for potential students to figure out their costs ahead of time and better plan their finances.</p>
+			  <!--Tables that show cost of tuition and fees. There are three tables that are populated with JavaScript-->
+			  <table>
+			     <caption>In State Costs</caption>
+				 <thead>
+				    <tr>
+					   <th class="head"></th>
+					   <th class="head"></th>
+					   <th class="head"></th>
+					</tr>
+				 </thead>
+				 <tbody>
+				    <tr>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					</tr>
+				    <tr>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					</tr>					
+				 </tbody>
+			  </table>
+			  <table>
+			     <caption>Out of State Costs</caption>
+				 <thead>
+				    <tr>
+					   <th class="head"></th>
+					   <th class="head"></th>
+					   <th class="head"></th>
+					</tr>
+				 </thead>
+				 <tbody>
+				    <tr>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					</tr>
+				    <tr>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					</tr>					
+				 </tbody>
+			  </table>
+			  <table>
+			     <caption>International Costs</caption>
+				 <thead>
+				    <tr>
+					   <th class="head"></th>
+					   <th class="head"></th>
+					   <th class="head"></th>
+					</tr>
+				 </thead>
+				 <tbody>
+				    <tr>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					</tr>
+				    <tr>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					   <td class="table"></td>
+					</tr>					
+				 </tbody>
+			  </table>			  
+		      <!--Form to calculate tuition and fee costs-->
+			  <form id="calculatorform" novalidate="novalidate">
+			     <!--Drop down field to determine whether in state, out of state, or international student-->
+			     <fieldset id="residency">
+				    <legend>Residency</legend>
+					<div class="checkbox">
+						<label for="residency">The selection is based off your permanent address:</label>
+						<select id="residencySelect" name="Residency">
+							<option value="WV">WV Resident</option>
+							<option value="Non-WV">Out of state</option>
+							<option value="Int">International</option>
+						</select>
+					</div>
+					<div class="errorMessage"></div>
+				 </fieldset>
+				 <!--Fields to determine student's attendance type: Full-Time or Part-Time, Online or On Campus-->
+				 <fieldset id="attendanceType">
+				    <legend>Attendance Type</legend>
+					<!--Radio buttons to determine full-time or part-time-->
+					<div id="attendanceTime" class="radio">
+						<p>Will you be attending full-time or part-time?</p>
+						<input id="fullTime" name="CreditLoad" type="radio" value="FT" />
+						<label for=>Full-Time</label>
+						<input id="partTime" name="CreditLoad" type="radio" value="PT" />
+						<label for=>Part-Time</label>
+					</div>
+					<div class="errorMessage"></div>
+					<!--Check box to determine if on campus or online. Blank means student is online-->
+					<div id="attendanceLocation" class="checkbox">
+						<p>Please check if you will be attending on campus classes.</p>
+						<input type="checkbox" id="oncampus" class="location" />
+						<label for="oncampus">On Campus</label>
+					</div>	
+				 </fieldset>
+				 <!--Number input field to determine the number of credits student will take-->
+				 <fieldset id="creditInput">
+				    <legend>Credits</legend>
+					<input type="number" id="credits" value="0" /> <!--Removed min and max to enable JS validation of credit input instead-->
+                    <label for="credits">
+                       <p>Number of Credits (0&#8209;22)</p>
+                    </label>
+					<div class="errorMessage"></div>
+				 </fieldset>
+			  </form>
+			  <!--Button to calculate costs-->
+			  <button type="button" id="calcButton" class="button">Calculate Cost</button>
+			  <!--Section to display costs-->
+			  <aside>
+			     <p>Tuition Cost: <span id="tuition"></span></p>
+				 <p>Campus Fees: <span id="fees"></span></p>
+			     <p>Total Cost: <span id="cost"></span></p>
+			  </aside>
+		   </div>
+		   <div class="column right"></div>
+		</article>
+	 </main>
+	 <footer>
+	    Omega University &bull; Main Campus &bull; 1234 Main Ave., Weston, WV 26452 
+	    <img src="images/omega.png" width="132" height="120" alt="Omega Symbol" title="" id="logo2" />
+	 </footer>	 
+   </div>
+   <script src="calculator.js"></script>
+</body>
+</html>

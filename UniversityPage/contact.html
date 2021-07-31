@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Omega University 
+      University web page
+      Author: Garrison Donnelly
+      Date:  6/6/2021 
+
+      Filename: contact.html
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Contact Us - Omega University</title>
+   <link rel="stylesheet" href="omegastyle.css" />
+</head>
+
+<body>
+   <div>
+     <header>
+	    <h1>
+		   <img src="images/omega.png" width="132" height="120" alt="Omega Symbol" title="" id="logo1" />
+		   Omega University
+		</h1>   
+     </header>
+	 
+	 <nav>
+	    <ul>
+		   <li><a href="index.html">Home</a></li>
+           <li id="currentpage"><a href="#">Contact Us</a></li>
+           <li><a href="about.html">About Us</a></li>
+           <li><a href="majors.html">Majors Offered</a></li>
+		   <li><a href="costcalculator.html">Cost Calculator</a></li>
+		</ul>
+	 </nav>
+	 
+	 <main id="contactmain">
+	    <h2>
+		   Contact Us
+		</h2>
+        
+		<div class="column left"></div>
+		<div class="column middle">
+			<form id="buttons">
+			  <button type="button" onclick="showContact(undergrad)" id="ugbutton" class="button">Undergraduate Admissions</button>
+			  <button type="button" onclick="showContact(grad)" id="gradbutton" class="button">Graduate Admissions</button>
+			  <button type="button" onclick="showContact(bursar)" id="bursarbutton" class="button">Bursar</button>
+			  <button type="button" onclick="showContact(registrar)" id="registrarbutton" class="button">Registrar</button>
+			  <button type="button" onclick="showContact(studentAffairs)" id="sabutton" class="button">Student Affairs</button>
+			</form>	  
+						
+			<article> 			   
+			   <section id="contacts">
+				  <div id="undergrad" class="contact">
+					 <h3>Office of Undergraduate Admissions</h3> 
+					 <p>Phone Number: 1-800-555-1234 <br/>Email Address: <a href="mailto:admissions@omega.edu">admissions@omega.edu</a></p>
+				  </div>
+				  <div id="grad" class="contact">
+				     <h3>Office of Graduate Admission</h3>
+					 <p>Phone Number: 1-800-555-5948<br/>Email Address: <a href="mailto:gradadmissions@omega.edu">gradadmissions@omega.edu</a></p>
+				  </div>
+				  <div id="bursar" class="contact">
+				     <h3>Office of the Bursar</h3>
+					 <p>Phone Number: 1-800-555-1111<br/>Email Address: <a href="mailto:bursar@omega.edu">bursar@omega.edu</a></p>
+				  </div>
+				  <div id="registrar" class="contact">
+				     <h3>Office of the Registrar</h3>
+					 <p>Phone Number: 1-800-555-0611<br/>Email Address: <a href="mailto:registrar@omega.edu">registrar@omega.edu</a></p>
+				  </div>
+				  <div id="studentaffairs" class="contact">
+				     <h3>Office of Student Affairs</h3>
+					 <p>Phone Number: 1-800-555-1330<br/>Email Address: <a href="mailto:studentaffairs@omega.edu">studentaffairs@omega.edu</a></p>
+				  </div>
+			   </section>
+			</article>
+		</div>
+		<div class="column right"></div>
+	 </main>
+	 <footer>
+	    Omega University &bull; Main Campus &bull; 1234 Main Ave., Weston, WV 26452 
+	    <img src="images/omega.png" width="132" height="120" alt="Omega Symbol" title="" id="logo2" />
+	 </footer>	 
+   </div>
+   <script src="contact.js"></script>
+</body>
+</html>
